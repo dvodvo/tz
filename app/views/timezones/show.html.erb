@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @timezone %>
+
+<div>
+  <%= link_to "Edit this timezone", edit_timezone_path(@timezone) %> |
+  <%= link_to "Back to timezones", timezones_path %>
+
+  <%= button_to "Destroy this timezone", @timezone, method: :delete %>
+</div>
