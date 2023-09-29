@@ -26,17 +26,20 @@
   </div>
 <% end %>
 
+
 <%= javascript_tag do %>
-  var item1 = new autoComplete({
-      selector: '#individual_tz',
-      minChars: 2,
-      source: function(term, suggest){
-          term = term.toLowerCase();
-          var choices = <%= raw @timezone_names %>;
-          var suggestions = [];
-          for (i=0;i<choices.length;i++)
-              if (~choices[i].toLowerCase().indexOf(term)) suggestions.push(choices[i]);
-          suggest(suggestions);
-      }
-  });
+  window.addEventListener('load', function () {
+    var item1 = new autoComplete({
+        selector: '#individual_tz',
+        minChars: 2,
+        source: function(term, suggest){
+            term = term.toLowerCase();
+            var choices = <%= raw @timezone_names %>;
+            var suggestions = [];
+            for (i=0;i<choices.length;i++)
+                if (~choices[i].toLowerCase().indexOf(term)) suggestions.push(choices[i]);
+            suggest(suggestions);
+        }
+    });
+  })
 <% end %>
