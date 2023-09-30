@@ -29,9 +29,6 @@
 /_private
 /public/ci_barcodes
 /public/qr
-/uploads
-/lib/tasks/import_csv_data.rake
-/lib/tasks/cleanup.rake
 
 
 # configurations
